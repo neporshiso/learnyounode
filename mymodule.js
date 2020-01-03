@@ -9,8 +9,6 @@
 */
 
 const fs = require("fs");
-let path = process.argv[2];
-let ext = `.${process.argv[3]}`;
 
 module.exports = function fileFilter(path, filter, callback) {
   fs.readdir(path, function(err, data) {
@@ -18,28 +16,12 @@ module.exports = function fileFilter(path, filter, callback) {
       return callback(err);
     }
 
-    if (data.includes(filter)) {
-      return data;
-    }
+    let filtered = data.filter(
+      file => file.includes(filter) && file.length > 2
+    );
+    
+    // this lines up with the err, data args in fileFilter. Null goes in as the "err" argument. filtered gets passed through as data.
+    callback(null, filtered);
 
-    callback(null, data);
   });
 };
-
-// 'use strict'
-//     const fs = require('fs')
-//     const path = require('path')
-
-//     module.exports = function (dir, filterStr, callback) {
-//       fs.readdir(dir, function (err, list) {
-//         if (err) {
-//           return callback(err)
-//         }
-
-//         list = list.filter(function (file) {
-//           return path.extname(file) === '.' + filterStr
-//         })
-
-//         callback(null, list)
-//       })
-//     }
