@@ -1,7 +1,9 @@
 /* Juggling Async (Exercise 9 of 13)
+
 This problem is the same as the previous problem (HTTP COLLECT) in that  
   you need to use http.get(). However, this time you will be provided with  
   three URLs as the first three command-line arguments.  
+  
 */
 
 const http = require("http");
