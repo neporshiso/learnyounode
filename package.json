@@ -1,0 +1,17 @@
+{
+  "name": "nodeschool",
+  "version": "1.0.0",
+  "description": "Neps nodeschool solutions",
+  "main": "hello-world.js",
+  "dependencies": {
+    "concat-stream": "^2.0.0",
+    "moment": "^2.24.0",
+    "through2-map": "^3.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nep Orshiso",
+  "license": "ISC"
+}
