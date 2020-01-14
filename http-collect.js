@@ -18,7 +18,7 @@ http
     response.pipe(
       concat(data => {
         console.log(data.length);
-        console.log(data.toString());
+        console.log(data);
       })
     );
     response.on("error", console.error);

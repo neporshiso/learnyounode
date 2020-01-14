@@ -1,7 +1,7 @@
 {
-  "name": "nodeschool",
+  "name": "learnyounode",
   "version": "1.0.0",
-  "description": "Neps nodeschool solutions",
+  "description": "Neps learnyounode solutions",
   "main": "hello-world.js",
   "dependencies": {
     "concat-stream": "^2.0.0",
@@ -9,6 +9,10 @@
     "through2-map": "^3.0.0"
   },
   "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neporshiso/learnyounode"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

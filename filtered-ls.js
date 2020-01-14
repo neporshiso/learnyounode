@@ -6,19 +6,20 @@ Create a program that prints a list of files in a given directory,
   file extension to filter by as the second argument.  
   
 */
+
 const fs = require("fs");
 
-let path = process.argv[2];
+let directory = process.argv[2];
 let ext = `.${process.argv[3]}`;
 
-function fileFilter(path, ext) {
-  fs.readdir(path, function(err, content) {
-    content.forEach(function(el) {
-      if (el.includes(ext)) {
-        console.log(el);
-      }
-    });
-  });
-}
+fs.readdir(directory, (err, files) => {
+  if (err) {
+    console.error(err);
+    return;
+  }
 
-fileFilter(path, ext);
+  files.forEach(file => {
+    // Opportune time to use path.extname()
+    if (file.substring(file.length - 3) === ext) console.log(file);
+  });
+});

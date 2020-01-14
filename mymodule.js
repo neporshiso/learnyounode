@@ -10,18 +10,20 @@
 
 const fs = require("fs");
 
-module.exports = function fileFilter(path, filter, callback) {
-  fs.readdir(path, function(err, data) {
+const fileFilter = (path, filter, callback) => {
+  fs.readdir(path, (err, data) => {
     if (err) {
       return callback(err);
     }
 
     let filtered = data.filter(
+      // again path.extname(file) would be useful here
       file => file.includes(filter) && file.length > 2
     );
-    
+
     // this lines up with the err, data args in fileFilter. Null goes in as the "err" argument. filtered gets passed through as data.
     callback(null, filtered);
-
   });
 };
+
+module.exports = fileFilter;

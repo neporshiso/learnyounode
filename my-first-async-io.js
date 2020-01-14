@@ -7,16 +7,17 @@ Write a program that uses a single asynchronous filesystem operation to
 */
 
 const fs = require("fs");
+const file = process.argv[2];
 
-function asyncFileRead() {
-  fs.readFile(process.argv[2], (err, fileContents) => {
+const asyncFileRead = () => {
+  fs.readFile(file, 'utf8', (err, fileContents) => {
     if (err) {
       return console.error(err);
     }
 
-    let content = fileContents.toString().split("\n").length - 1;
+    let content = fileContents.split("\n").length - 1;
     console.log(content);
   });
-}
+};
 
 asyncFileRead();

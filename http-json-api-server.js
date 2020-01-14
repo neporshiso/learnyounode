@@ -56,10 +56,9 @@ const server = http
     }
 
     if (route === "/api/unixtime") {
-      console.log('unix time query', urlParts.query)
       let payload = {
-        unixtime: Number(moment(date).format('x'))
-      }
+        unixtime: Number(moment(date).format("x"))
+      };
       res.writeHead(200, { "Content-Type": "application/json" });
       res.end(JSON.stringify(payload));
     }

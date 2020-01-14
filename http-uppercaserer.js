@@ -24,6 +24,8 @@ http
           })
         )
         .pipe(res);
+    } else {
+      return res.end("POST Requests Only");
     }
   })
   .listen(PORT);

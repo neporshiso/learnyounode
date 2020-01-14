@@ -17,8 +17,10 @@ urls.forEach((url, index) => {
     response.setEncoding("utf8");
     response.pipe(
       concat(data => {
-        ans[index] = data.toString();
+        ans[index] = data;
         count--;
+        
+        // Once all the data is received and placed into ans, we then send to stdout
         if (count == 0) {
           ans.forEach(res => console.log(res));
         }
